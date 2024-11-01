@@ -1,0 +1,271 @@
+@import '../../sass/Mixins.scss';
+
+.MainCard_container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+
+
+    .text_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 32px;
+
+        h2 {
+            width: 500px;
+            font-size: 32px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        @include respond-to(small) {
+            margin-top: 32px;
+
+            h2 {
+                width: 300px;
+                font-size: 16px;
+            }
+
+            p {
+                width: 300px;
+                text-align: center;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .Card_div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        margin-top: 16px;
+
+        div {
+            
+            background-color: #E9EFEC;
+            width: 350px;
+            height: 350px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            color: #262D29;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+           
+
+            p {
+                font-size: 16px;
+                text-align: left;
+                padding: 0 8px;
+                margin: 16px 8px;
+            }
+
+            h3 {
+                font-weight: 600;
+                align-self: flex-start;
+                font-size: 16px;
+                margin: 8px;
+                padding: 8px;
+            }
+
+            img {
+                width: 50%;
+                height: 120px;
+                align-self: center;
+                margin-bottom: 10%;
+                object-fit: contain;
+                transform: translateX(100px);
+            }
+
+            button {
+                position: absolute;
+                bottom: 20px;
+                font-weight: 700;
+                margin-left: 10px;
+                width: fit-content;
+                height: 30px;
+                border-radius: 5px;
+                background-color: inherit;
+                border: none;
+                outline: none;
+                color: #39433E;
+                transition: 500ms;
+               
+            }
+
+        }
+
+        // for mobile view
+        @include respond-to(small) {
+            flex-direction: column;
+
+            div {
+                width: 300px;
+                height: 260px;
+
+                p {
+                    font-size: 12px;
+                    visibility: visible;
+                    padding: 8px;
+                    margin: 8px;
+                }
+
+                h3 {
+                    font-size: 16px;
+                }
+
+                img {
+                    height: 120px;
+                    align-self: flex-end;
+                    margin-bottom: 0;
+                    object-fit: contain;
+                    transform: translateX(10px);
+
+
+                }
+
+                button {
+                    background-color: #B2CCBF;
+                    color: #131615;
+                }
+            }
+        }
+
+        //for desktop view
+        @include respond-to(desktop) {
+            div {
+                cursor: pointer;
+
+                p {
+                    visibility: hidden;
+                    transition: transform 1s;
+                }
+            }
+
+            div:hover {
+                p {
+                    visibility: visible;
+                    transform: translateY(-10px);
+                }
+
+                button {
+                    background-color: #C9DABF;
+                    color: black;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+    @include respond-to(small) {
+        margin-top: 110px;
+    }
+}
+
+.contact_div {
+    background: linear-gradient(344deg, rgba(245,245,220,1) 11%, rgba(255,207,157,1) 80%);
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin: 96px 0px;
+    color: white;
+
+
+    .sub_cnt_div {
+        padding: auto;
+        margin: 50px 30%;
+        color: black;
+
+        h4 {
+            padding: 12px 0px;
+            font-weight: 800;
+            text-transform: capitalize;
+            font-size: 20px;
+        }
+
+        p {
+            text-transform: capitalize;
+            padding: 8px 0px;
+
+            span {
+                padding: 4px;
+            }
+
+            span:hover {
+
+                font-weight: 900;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+    }
+
+    .cnt_btn {
+        position: relative;
+        display: inline-block;
+        padding: 8px 24px;
+        margin: 24px 0px;
+        font-size: 16px;
+        color: black;
+        border: 2px solid #262D29;
+        background-color: transparent;
+        overflow: hidden;
+        cursor: pointer;
+        transition: color 0.4s ease;
+        border-radius: 25px;
+        -webkit-tap-highlight-color: transparent;
+
+        span {
+            padding: 8px 0px;
+            margin: 24px 0px;
+            font-size: 16px;
+        }
+    }
+
+    .cnt_btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #C7253E;
+        transition: left 0.4s ease;
+        z-index: -1;
+    }
+
+    .cnt_btn:hover {
+        color: white;
+        border: 2px solid #C7253E;
+    }
+
+    .cnt_btn:hover::before {
+        left: 0;
+
+    }
+
+
+
+    @include respond-to(small) {
+        width: 100vw;
+
+        .sub_cnt_div {
+            margin: 20px;
+
+            .icon {
+                padding: 4px;
+                text-align: center;
+            }
+        }
+    }
+
+}

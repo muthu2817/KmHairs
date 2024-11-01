@@ -1,0 +1,50 @@
+@import '../../sass/Mixins.scss';
+
+.service_main_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 56px;
+
+    .service {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 16px;
+        letter-spacing: 0.4px;
+        border-radius: 8px;
+        width: 300px;
+        height: 120px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        img{
+            width: 40px;
+            height: 40px;
+        }
+        p {
+            color: #0b210e;
+            padding: 4px;
+        }
+    }
+
+    @include respond-to(small) {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin:24px;
+
+        .service {
+            width: 200px;
+            height: fit-content;
+            margin:12px;
+            img{
+                width: 24px;
+                height: 24px;
+            }
+            p{
+                text-align: center;
+            }
+        }
+
+    }
+}

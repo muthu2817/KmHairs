@@ -1,0 +1,34 @@
+.whatsapp_float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 70px;
+    right: 40px;
+    font-size: 30px;
+    z-index: 10;
+    background: transparent;
+    background-color: inherit;
+}
+
+a{
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+img{
+object-fit: fill;
+width: 60px;
+height: 60px;
+background: none;
+}
+
+@media screen and (max-width: 767px) {
+    .whatsapp_float {
+        width: 40px;
+        height: 40px;
+        bottom: 70px;
+        right: 40px;
+        font-size: 22px;
+    }
+}
+

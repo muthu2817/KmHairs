@@ -1,0 +1,23 @@
+// Import variables
+@import './variables.scss';
+
+// Media queries mixin
+@mixin respond-to($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  
+  @if $breakpoint == small {
+    @media (max-width: $size) { @content; }
+  }
+  @else if $breakpoint == medium {
+    @media (min-width: map-get($breakpoints, small)) and (max-width: $size) { @content; }
+  }
+  @else if $breakpoint == large {
+    @media (min-width: map-get($breakpoints, medium)) and (max-width: $size) { @content; }
+  }
+  @else if $breakpoint == xlarge {
+    @media (min-width: map-get($breakpoints, large)) and (max-width: $size) { @content; }
+  }
+  @else if $breakpoint == desktop {
+    @media (min-width: $size) { @content; }
+  }
+}
