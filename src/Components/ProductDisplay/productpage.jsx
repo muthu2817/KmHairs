@@ -7,6 +7,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+
 
 
 
@@ -14,7 +17,7 @@ const ProductSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const Mainref = useRef();
   const PopUpRef = useRef();
-  const[imgPath, setimgPath] = useState(0);
+  const [imgPath, setimgPath] = useState(0);
 
   //gsap loading animation
   useGSAP(() => {
@@ -27,14 +30,25 @@ const ProductSection = () => {
     )
   })
 
- const clickHandler = (img) =>{
-  setIsVisible(!isVisible);
- setimgPath(img);
- console.log(img);
- }
- const clickHandler1 = () =>{
-  setIsVisible(!isVisible);
- }
+  const clickHandler = (img) => {
+    setIsVisible(!isVisible);
+    setimgPath(img);
+    console.log(img);
+  }
+  const clickHandler1 = () => {
+    setIsVisible(!isVisible);
+  }
+  const scrollContainerRef = useRef();
+
+  const scroll = (direction) => {
+    const scrollAmount = 200; // Adjust scroll amount as needed
+    if (direction === 'left') {
+      scrollContainerRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else if (direction === 'right') {
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
 
   return (
     <>
@@ -47,26 +61,30 @@ const ProductSection = () => {
             </p>
           </div>
           <div className={style.slider_container}>
-            <div className={`${style.wrapper} ${style.scroll_x}`}>
+
+            <div className={`${style.wrapper} ${style.scroll_x}`} ref={scrollContainerRef}>
               <ul className={style.items}>
-                {
-                  images.map((img,index) => (
-                    <li key={index}>
-                      <img key={index} src={img.img_path} alt="" onClick={()=>clickHandler(index)}/>
-                    </li>
-                  ))
-                  
-                }
+                {images.map((img, index) => (
+                  <li key={index}>
+                    <img src={img.img_path} alt="" onClick={() => clickHandler(index)} />
+                  </li>
+                ))}
               </ul>
             </div>
 
+            
           </div>
+          <div className={style.control_buttons}>
+          <button className={style.scroll_button} onClick={() => scroll('left')}><FaRegArrowAltCircleLeft/></button>
+          <button className={style.scroll_button} onClick={() => scroll('right')}><FaRegArrowAltCircleRight/></button>
+          </div>
+
           {isVisible && (
-                    <div className={style.floating_card}ref={PopUpRef}>
-                        <button onClick={clickHandler1}>close</button>
-                        <img src={images[imgPath].img_path} alt="" />
-                    </div>
-                )}
+            <div className={style.floating_card} ref={PopUpRef}>
+              <button onClick={clickHandler1}>close</button>
+              <img src={images[imgPath].img_path} alt="" />
+            </div>
+          )}
 
         </div>
       </div>

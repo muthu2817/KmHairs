@@ -10,6 +10,10 @@ import NavMain from './Components/Header/Navbar';
 import WpLogo from '../src/assets/whatsapp.png';
 import AboutPage from './Components/Section/aboutPage';
 import BlogPage from './Components/Section/blogPage';
+import FAQ from './Components/Footer/Faq';
+import CategorySection from './Components/Category/CategoryMain';
+import OurPhiloshophy from './Components/ServicePage/philishophy';
+import CustomTree from './Components/ProductDisplay/productChart';
 
 function App() {
 
@@ -26,13 +30,14 @@ function App() {
       <Section />
       <AboutPage/>
       <ServicePage />
+      <CategorySection/>
+      <OurPhiloshophy/>
       <MainCard />
-      {/* <CategorySlider /> */}
       <ProductSection />
-      {/* <InstaContainer />
-      <RandomElem /> */}
       <BlogPage/>
+       <FAQ/>
       <Footer />
+      <CustomTree/>
     </>
 
   )

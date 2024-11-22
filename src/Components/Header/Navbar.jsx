@@ -26,7 +26,7 @@ const NavMain = () => {
         setIsOpen(!isOpen);
 
         if (!isOpen) {
-            gsap.to(navRef.current, { x: 0, duration: 0.3, ease: "power1.out" });
+            gsap.to(navRef.current, { x: 0 , duration: 0.3, ease: "power1.out" });
         } else {
             gsap.to(navRef.current, { x: '100%', duration: 0.3, ease: "power1.out" });
         }
@@ -35,8 +35,9 @@ const NavMain = () => {
     return (
         <>
             <div className={style.Main_container_nav}>
-                {/* <h1><span>KM</span><span><h6>hairs international</h6></span></h1> */}
+                <Link to="/">
                 <img src={logo} alt="company logo" />
+                </Link>
                  
                 {/*Desktop navbar*/}
                 <div className={style.desktop_nav_main}>
@@ -54,10 +55,12 @@ const NavMain = () => {
                                 </li>
                             );
                         })}
+                        <Link to="/contactus">
                         <div className={style.Contact_btn}>
                             <span>Get in touch</span>
                             <MdOutlineArrowOutward />
                         </div>
+                        </Link>
                     </ul>
 
                 </div>

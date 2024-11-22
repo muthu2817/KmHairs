@@ -21,7 +21,7 @@ const ServicePage = () => {
                     trigger: containerRef.current,
                     start: 'top 75%',
                     end: 'bottom 25%',
-                    toggleActions: 'play none none reverse'
+                    
                 }
             });
 

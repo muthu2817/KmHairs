@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import { useRef, useState } from 'react';
 import { images } from '../../data/Category';
 import { HiOutlineArrowSmallRight } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 
 
@@ -31,11 +32,12 @@ const Section = () => {
                         <p className='subtext'>
                             We provide premium bulk raw human hair, ethically sourced straight from temples. Our range includes a wide variety of products to suit different needs.
                         </p>
-
-                        <button className='productBtn'>
-                            Contact Us
-                            <MdOutlineArrowOutward />
-                        </button>
+                        <Link to={'/Contactus'}>
+                            <button className='productBtn'>
+                                Contact Us
+                                <MdOutlineArrowOutward />
+                            </button>
+                        </Link>
                         <button className='productBtn1'>
                             Explore products
                             <HiOutlineArrowSmallRight />
@@ -56,11 +58,13 @@ const Section = () => {
                             <img src={images[5].img_path} alt={images[5].category} />
                         </div>
                     </div>
-                    
+
                 </div>
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" className='waveSVG' viewBox="0 0 1440 320"><path fill="#CFE189" d="M0,128L48,149.3C96,171,192,213,288,234.7C384,256,480,256,576,256C672,256,768,256,864,245.3C960,235,1056,213,1152,176C1248,139,1344,85,1392,58.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className='waveSVG' viewBox="0 0 1440 320"><path fill="#0f4841" d="M0,128L48,149.3C96,171,192,213,288,234.7C384,256,480,256,576,256C672,256,768,256,864,245.3C960,235,1056,213,1152,176C1248,139,1344,85,1392,58.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+
             </div>
 
         </>

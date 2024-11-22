@@ -20,6 +20,7 @@ object-fit: fill;
 width: 60px;
 height: 60px;
 background: none;
+z-index: 2000;
 }
 
 @media screen and (max-width: 767px) {
@@ -29,6 +30,8 @@ background: none;
         bottom: 70px;
         right: 40px;
         font-size: 22px;
+        z-index: 2000;
+
     }
 }
 

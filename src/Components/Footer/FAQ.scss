@@ -1,0 +1,43 @@
+@import '../../sass/Mixins.scss';
+
+
+.faq-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 48px;
+
+    .faq-item {
+        background-color: #eeeeee;
+        margin: 8px;
+
+        .faq-question {
+            display: flex;
+            flex-direction: row;
+            width: 800px;
+            justify-content: space-between;
+            padding: 16px;
+            margin: 8px;
+        }
+
+        .faq-answer {
+            padding: 0px 16px;
+            margin: 0px 8px;
+            width: 800px;
+        }
+    }
+
+    @include respond-to(small) {
+        .faq-item {
+            .faq-question {
+                width: 350px;
+                padding: 16px;
+                margin: 8px;
+            }
+            .faq-answer {
+                width: 350px;
+            }
+        }
+    }
+}

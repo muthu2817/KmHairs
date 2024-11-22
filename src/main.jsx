@@ -8,6 +8,7 @@ import Store from '../src/Pages/Store.jsx';
 import Product from '../src/Pages/Products.jsx';
 import Blog from '../src/Pages/blog.jsx';
 import Notfound from '../src/utils/ErrorPage.jsx';
+import ContactPage from './Pages/Contactus.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')).render(
        <Route path="/productpage" element={<Product/>}></Route>
        <Route path="/store" element={<Store/>}></Route>
        <Route path="/blog" element={<Blog/>}></Route>
+       <Route path="/contactus" element={<ContactPage/>}></Route>
        <Route path="*" element={<Notfound/>}></Route>
       </Routes>
     </Router>

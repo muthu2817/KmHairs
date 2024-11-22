@@ -4,23 +4,21 @@
 .footer_wrapper {
     width: 100%;
     height: fit-content;
-    background-color: #FFFFFF;
+    background-color: #092230;
+    color: #F8F8FF;
 
     .Footer_main {
-        color: #131615;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
+        display: flex;
+        flex-direction: row;
         padding: 3rem;
         align-self: start;
 
-        img{
-            width: 100px;
-            height:70px;
-        }
+       
         div {
             position: relative;
             width: fit-content;
+            margin: 12px 24px;
+            padding: 4px;
 
             p:nth-child(1) {
                 margin-left: 0px;
@@ -29,6 +27,7 @@
                 text-align: left;
                 font-weight: 800;
                 padding: 8px 4px;
+                color:#a6aebf;
             }
 
             p {
@@ -47,7 +46,39 @@
         }
 
         @include respond-to(small) {
-            display: none;
+           // display: none;
+           display: grid;
+           grid-template-columns: repeat(1fr,auto);
+           padding: 4px;
+           div {
+            position: relative;
+            width: fit-content;
+            margin: 12px 24px;
+            padding: 4px;
+
+            p:nth-child(1) {
+                margin-left: 0px;
+                font-size: 16px;
+                text-transform: capitalize;
+                text-align: left;
+                //font-weight: 800;
+                padding: 8px 4px;
+                color:#a6aebf
+            }
+
+            p {
+                padding: 4px;
+                font-size: 16px;
+                text-transform: capitalize;
+                text-align: left;
+                cursor: pointer;
+                line-height: 1.5;
+            }
+
+            p:hover {
+                font-weight: 900;
+            }
+        }
         }
     }
 
@@ -79,7 +110,7 @@
         }
 
         .line {
-            border: 1px solid #131615;
+            border: 1px solid #F8F8FF;
             width: 95%;
             margin: auto;
         }
@@ -99,46 +130,47 @@
         }
     }
 
-    .mobile_footer {
-        display: none;
+    // .mobile_footer {
+    //     display: none;
         
 
-        @include respond-to(small) {
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-            -webkit-tap-highlight-color: transparent;
-          img{
-             width: 70px;
-             height: 50px;
-          }
-            h3 {
-                cursor: pointer;
-                display: flex;
-                justify-content: space-between;
-                padding: 10px 0;
-            }
+    //     @include respond-to(small) {
+    //         display: flex;
+    //         flex-direction: column;
+    //         padding: 16px;
+    //         -webkit-tap-highlight-color: transparent;
+    //       img{
+    //          width: 70px;
+    //          height: 50px;
+    //       }
+    //         h3 {
+    //             cursor: pointer;
+    //             display: flex;
+    //             justify-content: space-between;
+    //             padding: 8px 0;
+    //             margin: 8px  0px;
+    //         }
 
-            .collapsible {
-                max-height: 0;
-                overflow: hidden;
-                opacity: 0;
-                transition: max-height 0.5s ease, opacity 0.5s ease;
-            }
+    //         .collapsible {
+    //             max-height: 0;
+    //             overflow: hidden;
+    //             opacity: 0;
+    //             transition: max-height 0.5s ease, opacity 0.5s ease;
+    //         }
 
-            .collapsible.open {
-                max-height: 500px;
-                /* Set a height large enough to fit all content */
-                opacity: 1;
-            }
+    //         .collapsible.open {
+    //             max-height: 500px;
+    //             /* Set a height large enough to fit all content */
+    //             opacity: 1;
+    //         }
 
-            /* Optional styling for the content */
-            p {
-                margin: 5px 0;
-                padding: 8px 0;
-                color: #333;
-            }
+    //         /* Optional styling for the content */
+    //         p {
+    //             margin: 5px 0;
+    //             padding: 8px 0;
+    //             color: #333;
+    //         }
 
-        }
-    }
+    //     }
+    // }
 }

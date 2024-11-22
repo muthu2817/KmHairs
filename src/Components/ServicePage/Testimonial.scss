@@ -1,0 +1,85 @@
+@import '../../sass/Mixins.scss';
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    margin: 48px 0px;
+
+    .testimonial-content {
+        max-width: 700px;
+        text-align: center;
+        color: #333;
+    
+        .author-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+            object-fit: cover;
+        }
+    
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 16px;
+        }
+    
+        .quote {
+            font-size: 24px;
+            font-weight: 100;
+            line-height: 2;
+            margin-bottom: 24px;
+            color: #111;
+            font-style: italic;
+        }
+    
+        .author-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            color: #666;
+    
+            .author-name {
+                font-weight: bold;
+            }
+    
+            .author-title {
+                font-weight: 300;
+            }
+    
+            .learn-more {
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                color: #007acc;
+                cursor: pointer;
+    
+                svg {
+                    margin-left: 4px;
+                    transition: transform 0.2s ease;
+                }
+    
+                &:hover svg {
+                    transform: translateX(4px);
+                }
+            }
+        }
+    }
+
+    @include respond-to(small){
+        .testimonial-content{
+            .quote{
+                line-height: 1.5;
+            }
+        }
+
+    }
+}
+
+

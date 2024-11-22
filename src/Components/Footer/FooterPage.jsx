@@ -21,13 +21,14 @@ const Footer = () => {
     return (
         <>  <div className='footer_wrapper'>
             <div className='Footer_main'>
-                <img src={logo} alt="" />
+                {/* <img src={logo} alt="" /> */}
                 <div className='abt_div'>
-                    <p>About</p>
-                    <p>who we are</p>
-                    <p>our Experience</p>
+                    <p>company</p>
+                    <p>about us</p>
+                    <p>gallery</p>
                     <p>our philosophy</p>
-                    <p>quality standard</p>
+                    <p>quality standards</p>
+                    <p>categories</p>
                 </div>
                 <div className='product_div'>
                     <p>products</p>
@@ -40,56 +41,21 @@ const Footer = () => {
                     <p>natural curly</p>
                 </div>
                 <div>
-                    <p>Factory location</p>
-                    <p>Chennai, Tamilnadu</p>
-                    <p>Karaikudi, Tamilnadu</p>
+                    <p>Support</p>
+                    <p>FAQ</p>
+                    <p>contact us</p>
+                    <p>factory location</p>
                 </div>
             </div>
 
-            <div className='mobile_footer'>
-            <img src={logo} alt="" />
-                <div className='abt_div'>
-                    <h3 onClick={() => setToggleMenu1(!togglemenu1)}>
-                        About <span><IoMdArrowDropdown /></span>
-                    </h3>
-                    <div className={`collapsible ${togglemenu1 ? 'open' : ''}`}>
-                        <p>Who we are</p>
-                        <p>Our Experience</p>
-                        <p>Our Philosophy</p>
-                        <p>Quality Standard</p>
-                    </div>
-                </div>
-                <div className='product_div'>
-                    <h3 onClick={() => setToggleMenu2(!togglemenu2)}>
-                        Products <span><IoMdArrowDropdown /></span>
-                    </h3>
-                    <div className={`collapsible ${togglemenu2 ? 'open' : ''}`}>
-                        <p>Categories</p>
-                        <p>Raw Black Hair</p>
-                        <p>Raw Natural Gray Hair</p>
-                        <p>Raw Dyed Hair</p>
-                        <p>Natural Straight</p>
-                        <p>Natural Wavy</p>
-                        <p>Natural Curly</p>
-                    </div>
-                </div>
-                <div>
-                    <h3 onClick={() => setToggleMenu3(!togglemenu3)}>
-                        Factory Location <span><IoMdArrowDropdown /></span>
-                    </h3>
-                    <div className={`collapsible ${togglemenu3 ? 'open' : ''}`}>
-                        <p>Chennai, Tamilnadu</p>
-                        <p>Karaikudi, Tamilnadu</p>
-                    </div>
-                </div>
-            </div>
+           
 
             <div className='social_media_links'>
                 <hr className='line' />
                 <div className='social_icons'>
-                    <a href='#'><FaFacebookSquare /></a>
-                    <a href='#'><FaInstagram /></a>
-                    <a href='#'><FaYoutube /></a>
+                    <a href='https://www.facebook.com/kmhairinternational' target='_blank'><FaFacebookSquare /></a>
+                    <a href='https://www.instagram.com/kmhairinternational' target='_blank' ><FaInstagram /></a>
+                    <a href='https://www.youtube.com/@kmhairinternational' target='_blank'><FaYoutube /></a>
                     <div>
                         <FaRegCopyright />
                         2024 KM Hair International

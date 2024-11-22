@@ -1,0 +1,313 @@
+@import '../../sass/Mixins.scss';
+.parent_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 96px;
+  position: relative;
+
+  .cat_parent_div {
+    width: 90vw;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 auto;
+    gap: 8px;
+
+    .cat_h3, .cat_text {
+      margin: 0; 
+      padding: 0; 
+  }
+
+    .cat_h3 {
+          text-transform: capitalize;
+          font-size: 48px;
+          color: #AF1740;
+          font-weight: 100;
+        
+          align-self: flex-start;
+        }
+    
+        .cat_text {
+          color: #282828;
+          font-size: 20px;
+          line-height: 1.5;    
+          align-self: flex-start;
+         }
+}
+
+  .wrapper_div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    align-items: center;
+    margin-top: 48px;
+    -webkit-tap-highlight-color: transparent;
+
+    .category_div {
+      width: 380px;
+      height: 350px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      .category_img {
+        width: 300px;
+        height: 250px;
+        margin: 8px 40px;
+        object-fit: cover;
+        //display: none;
+
+      }
+
+      p {
+        color: #B31312;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 200;
+        padding: 8px;
+      }
+
+      .cat_btn {
+        border: 2px solid #B31312;
+        outline: none;
+        border-radius: 24px;
+        padding: 8px;
+        font-size: 16px;
+        width: 130px;
+        color: #B31312;
+        position: relative;
+        bottom: 15px;
+        left: 60%;
+        cursor: pointer;
+        overflow: hidden;
+        transition: color 0.4s ease;
+        background-color: transparent;
+      }
+
+      .cat_btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: #B31312;
+        transition: left 0.4s ease;
+        z-index: -1;
+        border-radius: 24px;
+        /* Ensures the background follows the border-radius */
+      }
+
+      .cat_btn:hover {
+        color: white;
+      }
+
+      .cat_btn:hover::before {
+        left: 0;
+      }
+
+
+    }
+  }
+
+  .popup_sub {
+
+    max-width: 1200px;
+    min-width: 700px;
+    height: 350px;
+    background-color: #f5f5f5;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+    .subCat_div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      -webkit-tap-highlight-color: transparent;
+
+      div {
+        padding: 16px;
+
+        img {
+          width: 250px;
+          height: 200px;
+          object-fit: cover;
+          cursor: pointer;
+
+          &:hover {
+            scale: 1.2;
+          }
+        }
+
+        p {
+          width: 150px;
+          text-align: center;
+          margin-left: 30px;
+          text-transform: capitalize;
+        }
+      }
+
+    }
+
+    .close_btn {
+      background: transparent;
+      outline: none;
+      border: none;
+      font-size: 24px;
+      position: absolute;
+      right: 16px;
+      top: 20px;
+      cursor: pointer;
+    }
+  }
+
+  @include respond-to(small) {
+    .cat_parent_div {
+      margin: auto;
+      padding: auto;
+
+      .cat_h3 {
+        text-transform: capitalize;
+        font-size: 28px;
+        color: #AF1740;
+        font-weight: 100;
+        padding: 8px;
+
+      }
+
+      .cat_text {
+        color: #282828;
+        font-size: 16px;
+        width: 90vw;
+        line-height: 1.5;
+        padding: 8px;
+        text-align: justify;
+      }
+    }
+
+    .wrapper_div {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px;
+
+      .category_div {
+        width: 300px;
+        height: 250px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+
+        .category_img {
+          width: 200px;
+          height: 150px;
+          margin: 0px;
+        }
+
+        p {
+          font-size: 16px;
+          width: 100px;
+          text-transform: capitalize;
+        }
+
+        .cat_btn {
+          //border: 2px solid #B31312;
+          outline: none;
+          border-radius: 24px;
+          padding: 8px;
+          font-size: 12px;
+          width: 100px;
+          color: #fff;
+          position: absolute;
+          bottom: 15px;
+          left: 60%;
+          cursor: pointer;
+          overflow: hidden;
+          transition: color 0.4s ease;
+          background-color: #B31312;
+
+          margin: 8px;
+        }
+      }
+
+
+    }
+
+    .popup_sub {
+      max-width: 100%;
+      min-width: 90vw;
+      height: auto;
+      background-color: #f5f5f5;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 15;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .subCat_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        div {
+          padding: 8px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 180px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            margin-left: -25px;
+
+            &:hover {
+              scale: 1.2;
+            }
+          }
+
+          p {
+            width: 150px;
+            text-align: center;
+            margin-left: 12px;
+            text-transform: capitalize;
+          }
+        }
+      }
+      .close_btn {
+        background: transparent;
+        outline: none;
+        border: none;
+        font-size: 24px;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+}
