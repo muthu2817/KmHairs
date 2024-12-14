@@ -4,6 +4,8 @@ import { useState, useRef } from 'react';
 import { RxCross2 } from "react-icons/rx";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { MdOutlineArrowOutward } from "react-icons/md";
+
 
 const CategorySection = () => {
     const [toggle, setToggle] = useState(false);
@@ -61,7 +63,7 @@ const CategorySection = () => {
                                 <p>{cat.Category}</p>
                                 <img className='category_img' src={cat.img_path} alt="" />
                                 <button onClick={()=> handleClick(index)} className='cat_btn' style={{ visibility: !cat.sub ? "hidden" : "visible" }}>
-                                    sub categories
+                                   <MdOutlineArrowOutward/>
                                 </button>
                             </div>
                         ))

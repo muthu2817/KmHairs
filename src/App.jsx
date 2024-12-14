@@ -13,7 +13,8 @@ import BlogPage from './Components/Section/blogPage';
 import FAQ from './Components/Footer/Faq';
 import CategorySection from './Components/Category/CategoryMain';
 import OurPhiloshophy from './Components/ServicePage/philishophy';
-import CustomTree from './Components/ProductDisplay/productChart';
+import {rawHair} from './data/hairCategory2';
+import Moodboard from './Components/InstaBox/InstaDisplay';
 
 function App() {
 
@@ -29,15 +30,15 @@ function App() {
       <NavMain />
       <Section />
       <AboutPage/>
-      <ServicePage />
+      <Moodboard/>
       <CategorySection/>
+      <ServicePage />
       <OurPhiloshophy/>
       <MainCard />
       <ProductSection />
       <BlogPage/>
        <FAQ/>
       <Footer />
-      <CustomTree/>
     </>
 
   )

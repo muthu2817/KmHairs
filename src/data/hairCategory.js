@@ -53,21 +53,5 @@ export const rawHair = [
                 img_path:img
             }
         ]
-    },
-    {
-        id: 1,
-        Category: 'natural straight',
-        img_path : img
-    },
-    {
-        id: 2,
-        Category: 'natural wavy',
-        img_path : img
-    },
-    {
-        id: 3,
-        Category: 'natural curly',
-        img_path : img
     }
-
 ]

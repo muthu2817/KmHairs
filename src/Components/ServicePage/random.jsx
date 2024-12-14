@@ -5,6 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import img from '../../assets/certified.png';
+import img1 from '../../assets/procurement.png';
+ import img2 from '../../assets/oraganic.png';
+import img3 from '../../assets/delivery.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,17 +34,17 @@ const ServicePage = () => {
         <>
             <div className='service_main_container' ref={containerRef} id='serviceContainer'>
                 <div className='service'>
-                    <img src={img} alt="" />
+                    <img src={img1} alt="" />
                     <p>Ethically sourced</p>
                 </div>
 
                 <div className='service'>
-                    <img src={img} alt="" />
+                    <img src={img2} alt="" />
                     <p>Chemical Free Treatment</p>
                 </div>
 
                 <div className='service'>
-                    <img src={img} alt="" />
+                    <img src={img3} alt="" />
                     <p>product varieties</p>
                 </div>
             </div>

@@ -7,6 +7,8 @@ import { useGSAP } from '@gsap/react';
 import { useRef, useEffect } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { MdOutlineArrowOutward } from "react-icons/md";
+
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -59,8 +61,8 @@ const AboutPage = () => {
     }, []);
 
     useGSAP(() => {
-        gsap.fromTo(block1Ref.current, { opacity: 0, scale: 0 }, {
-            opacity: 1, duration: 2, scale: 1, scrollTrigger: {
+        gsap.fromTo(block1Ref.current, { opacity: 0, y:50 }, {
+            opacity: 1, duration: 2, y:0, scrollTrigger: {
                 trigger: parentBlockRef.current,
                 start: 'top 20%',
                 end: 'bottom 25%',
@@ -68,8 +70,8 @@ const AboutPage = () => {
             }
         })
 
-        gsap.fromTo(block2Ref.current, { opacity: 0, scale: 0 }, {
-            opacity: 1, duration: 2, scale: 1, scrollTrigger: {
+        gsap.fromTo(block2Ref.current, { opacity: 0, y: 100 }, {
+            opacity: 1, duration: 2, y:0, scrollTrigger: {
                 trigger: block1Ref.current,
                 start: 'bottom 0%',
                 end: 'bottom 25%',
@@ -77,8 +79,8 @@ const AboutPage = () => {
             }
         })
 
-        gsap.fromTo(block3Ref.current, { opacity: 0, scale: 0 }, {
-            opacity: 1, duration: 2, scale: 1, scrollTrigger: {
+        gsap.fromTo(block3Ref.current, { opacity: 0, y: 100 }, {
+            opacity: 1, duration: 2, y: 0, scrollTrigger: {
                 trigger: block3Ref.current,
                 start: 'top 50%',
                 end: 'bottom 0%',
@@ -86,8 +88,8 @@ const AboutPage = () => {
             }
         })
 
-        gsap.fromTo(block4Ref.current, { opacity: 0, scale: 0 }, {
-            opacity: 1, duration: 2, scale: 1, scrollTrigger: {
+        gsap.fromTo(block4Ref.current, { opacity: 0, y: 100 }, {
+            opacity: 1, duration: 2, y: 0, scrollTrigger: {
                 trigger: block4Ref.current,
                 start: 'top 50%',
                 end: 'bottom 25%',
